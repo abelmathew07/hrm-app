@@ -1,0 +1,45 @@
+.container {
+    max-width: 100%;
+    padding: 20px;
+}
+.table {
+    width: 100%;
+    border: 1px solid #dee2e6;
+    font-family: 'Times New Roman', Times, serif;
+}
+.table th, .table td {
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .modal-dialog {
+        width: 90%;
+    }
+}
+.modal-fullscreen {
+    max-width: 100%;
+    width: 100%;
+}
+.form-label {
+    margin-bottom: 0.5rem;
+}
+.form-control {
+    margin-bottom: 1rem;
+}
+.btn-primary {
+    background-color: #00b306;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+.btn-primary:hover {
+    background-color: #00b306;
+}
+.btn-secondary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
