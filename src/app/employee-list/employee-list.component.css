@@ -1,0 +1,117 @@
+
+th, td {
+  padding: 20px;
+  text-align: left;
+}
+
+/* Hover Effect for Table Rows */
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1; /* Light gray on hover */
+}
+
+/* Remove default borders for cards */
+.card {
+  border: none;
+  margin-top: 15px;
+}
+
+/* Card header styling */
+.card-header {
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: #031d84e1; /* Match table header color */
+  color: white;
+  padding: 10px;
+}
+
+/* Card body styling */
+.card-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Title inside the card */
+h5.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* General paragraph styling */
+p {
+  margin-bottom: 0.6rem;
+}
+
+/* Divider in card body */
+.card-body hr {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-color: #007bff; /* Blue divider */
+}
+
+/* Close button */
+.btn-sm.btn-danger {
+  border-radius: 50%; /* Circular close button */
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+/* Styling table header */
+.table thead {
+  background-color: #031d84e1; /* Header background color */
+  color: white;
+  text-transform: uppercase; /* Uppercase text for headers */
+  font-size: 1rem;
+}
+
+/* Soft shadow for card */
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  .card-header, .card-body {
+    text-align: center;
+  }
+  .card-body p {
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 10px;
+  }
+}
+
+/* Flex container settings */
+.d-flex {
+  display: flex; /* Ensure flex display is set */
+}
+
+/* Employee List Table should take 40% width */
+.table-container {
+  flex: 0 0 40%; /* Make the table container 40% width */
+  max-width: 40%;
+}
+
+/* Employee Details Section should take 60% width */
+.employee-details {
+  flex: 0 0 60%; /* Make the details section 60% width */
+  max-width: 60%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  
+  .table-container,
+  .employee-details {
+    flex: 0 0 100%; /* Both sections take full width on small screens */
+    max-width: 100%;
+  }
+}

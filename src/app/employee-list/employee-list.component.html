@@ -1,1 +1,41 @@
-<p>employee-list works!</p>
+<div class="container mt-4">
+  <!-- Flex container -->
+  <div class="d-flex flex-row">
+    <!-- Employee List Table -->
+    <div class="table-container">
+      <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Employee Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees" (click)="selectEmployee(employee)" style="cursor: pointer;">
+            <td>{{ employee.fullName }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Employee Details Section -->
+    <div class="employee-details" *ngIf="selectedEmployee">
+      <div class="card shadow rounded">
+        <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+          <span>Employee Details</span>
+          <button class="btn btn-sm btn-danger" (click)="closeDetails()">x</button>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ selectedEmployee.fullName }}</h5>
+          <hr>
+          <p><strong>ID:</strong> {{ selectedEmployee.id }}</p>
+          <p><strong>Position:</strong> {{ selectedEmployee.position }}</p>
+          <p><strong>Qualification:</strong> {{ selectedEmployee.qualification }}</p>
+          <p><strong>Place:</strong> {{ selectedEmployee.place }}</p>
+          <p><strong>Email:</strong> {{ selectedEmployee.email }}</p>
+          <p><strong>Phone:</strong> {{ selectedEmployee.phone }}</p>
+          <p><strong>Joining Date:</strong> {{ selectedEmployee.joiningDate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
