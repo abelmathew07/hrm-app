@@ -51,10 +51,8 @@ p {
 }
 
 /* Close button */
-.btn-sm.btn-danger {
-  border-radius: 50%; /* Circular close button */
-  padding: 5px 10px;
-  font-size: 0.8rem;
+.card-header .btn-sm.btn-danger {
+  margin-left: auto; /* Push the button to the rightmost area */
 }
 
 /* Styling table header */
