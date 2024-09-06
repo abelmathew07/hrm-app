@@ -1,13 +1,16 @@
-<header class="app-header">
-    <nav>
-      <h1>HRM System</h1>
-      <!-- Add navigation links here -->
-      <ul>
-        <!-- <li><a [routerLink]="['/']" >Home</a></li> -->
-        <li><a [routerLink]="['/']">Dashboard</a></li>
-        <li><a [routerLink]="['/employees-list']">Employees</a></li>
-        <li><a [routerLink]="['/department']">Departments</a></li>
-      </ul>
-    </nav>
-  </header>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand  text" [routerLink]="['/']">HRM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active text" aria-current="page" [routerLink]="['/']">Home</a>
+          <a class="nav-link text" [routerLink]="['/employees-list']">Employees</a>
+          <a class="nav-link text" [routerLink]="['/department']">Departments</a>
+        </div>
+      </div>
+    </div>
+  </nav>
   
