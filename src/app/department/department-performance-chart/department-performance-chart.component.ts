@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Chart, registerables } from 'chart.js';
 
+
 @Component({
   selector: 'app-department-performance-chart',
   templateUrl: './department-performance-chart.component.html',
