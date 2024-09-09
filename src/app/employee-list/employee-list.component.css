@@ -138,7 +138,7 @@ p {
 
 /* Container for the table with custom scrollbar */
 .table-container {
-  max-height: 500px; /* Adjust height as needed */
+  max-height: 550px; /* Adjust height as needed */
   overflow-y: auto;
 }
 
