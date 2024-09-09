@@ -8,17 +8,18 @@
   
   .card {
     border-radius: 5px;
-    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
-    box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16) !important;
+    box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16) !important;
     border: none;
     margin-bottom: 30px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
-  
-  .card .card-block {
-    padding: 30px;
+  .card:hover{
+    scale: 1.03;
+    background: linear-gradient(45deg,#256fc4,#5dd6e6a5);
   }
+
   
   .order-card i {
     font-size: 26px;
