@@ -1,0 +1,10 @@
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Department Overview</h1>
+  
+    <div class="overview-section">
+      <h2>Overview</h2>
+      <p>Total Departments: {{ (totalDepartments$ | async) || 0 }}</p>
+      <p>Total Employees: {{ (totalEmployees$ | async) || 0 }}</p>
+    </div>
+  </div>
+  

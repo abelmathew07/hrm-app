@@ -1,10 +1,11 @@
+
 <div class="container mt-4">
     <h1 class="text-center mb-4">Departments</h1>
   
     <br>
   
     <!-- Search Box -->
-    <div class="mb-4">
+    <div class="mb-4 searchbox">
       <input type="text" class="form-control" placeholder="Search Departments" [(ngModel)]="searchQuery">
     </div>
   
@@ -41,7 +42,6 @@
   
         <!-- Add/Edit Department Form Section -->
         <div class="col-md-4 mt-5 mt-md-0">
-            
             <h2 class="mb-4">{{ selectedDepartment ? 'Edit Department' : 'Add Department' }}</h2>
             <br>
             <form [formGroup]="departmentForm" (ngSubmit)="onDepartmentSave()" class="row g-4">
@@ -69,3 +69,20 @@
         </div>
     </div>
 </div>
+
+<!-- Section 2 -->
+<div class="d-flex flex-wrap justify-content-between align-items-center mt-4" style="background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
+    <app-department-overview class="flex-fill me-2" style="background-color: #e9ecef; padding: 15px; border-radius: 8px;"></app-department-overview>
+    <app-department-performance-chart class="flex-fill ms-2" [performanceData]="performanceData" style="background-color: #e9ecef; padding: 15px; border-radius: 8px;"></app-department-performance-chart>
+</div>
+
+
+<!-- <div class="d-flex flex-wrap justify-content-between align-items-center mt-4" style="background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
+    
+  
+
+    <app-department-performance-chart [performanceData]="performanceData"></app-department-performance-chart>
+
+
+    <app-department-overview class="flex-fill me-2" style="background-color: #e9ecef; padding: 15px; border-radius: 8px;"></app-department-overview>
+</div> -->

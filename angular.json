@@ -26,15 +26,6 @@
                 "input": "public"
               }
             ],
-<<<<<<< HEAD
-           "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "src/styles.css"
-],
-"scripts": [
-  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-],
-=======
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.css"
@@ -42,7 +33,6 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
->>>>>>> 03a81060a0d29f8825363751457db3e5224fadea
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
