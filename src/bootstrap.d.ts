@@ -2,4 +2,4 @@
 interface Window {
     bootstrap: any;
   }
-  
+   
