@@ -1,5 +1,4 @@
 
-
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -24,13 +23,6 @@ interface Employee {
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent {
-closeDetails() {
-throw new Error('Method not implemented.');
-}
-onPhotoSelected($event: Event) {
-throw new Error('Method not implemented.');
-}
-
   employees: Employee[] = [
     { id: 20241001, fullName: 'John Doe', position: 'Software Engineer', qualification: 'B.Tech', place: 'Kochi', email: 'john.doe@example.com', phone: '123-456-7890', joiningDate: '2023-01-15', photoUrl: '\emp1.jpg' },
     { id: 20241002, fullName: 'Jane Smith', position: 'Project Manager', qualification: 'M.Tech', place: 'Kochi', email: 'jane.smith@example.com', phone: '987-654-3210', joiningDate: '2022-08-22', photoUrl: '\emp2.jpeg' },
@@ -62,12 +54,12 @@ throw new Error('Method not implemented.');
     photoUrl: ''
   };
   filterDepartment: string = '';
+closeDetails: any;
 
   constructor() {
     this.selectEmployee(this.employees[0]); // Automatically show the first employee's details on load
   }
 
-  // Open modal for adding a new employee
   openModal() {
     this.newEmployee = {
       id: 0,
@@ -77,23 +69,21 @@ throw new Error('Method not implemented.');
       place: '',
       email: '',
       phone: '',
-      joiningDate: ''
+      joiningDate: '',
+      photoUrl: ''
     };
     const modal = new window.bootstrap.Modal(document.getElementById('addEmployeeModal')!);
     modal.show();
   }
 
-  // Select an employee from the list on hover
   selectEmployee(employee: Employee) {
     this.selectedEmployee = employee;
   }
 
-  // Deselect employee when mouse leaves the list
   deselectEmployee() {
     this.selectedEmployee = this.employees[0]; // Optionally reset to the first employee
   }
 
-  // Add the new employee to the list
   addEmployee() {
     if (this.newEmployee) {
       this.newEmployee.id = Date.now(); // Generate a unique ID
@@ -115,12 +105,25 @@ throw new Error('Method not implemented.');
     }
   }
 
-  // Filter employees by department
   get filteredEmployees(): Employee[] {
     if (this.filterDepartment) {
       return this.employees.filter(emp => emp.position === this.filterDepartment);
     }
     return this.employees;
+  }
+
+  onPhotoSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (e: any) => {
+        this.newEmployee.photoUrl = e.target.result;
+      };
+
+      reader.readAsDataURL(file); // Convert file to Base64
+    }
   }
 }
 
