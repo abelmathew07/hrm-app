@@ -1,12 +1,18 @@
-
 th, td {
   padding: 20px;
   text-align: left;
 }
+th{
+  color: white;
+}
+
+table{
+    border: 1px solid rgba(0, 0, 65, 0.737);
+}
 
 /* Hover Effect for Table Rows */
 .table-hover tbody tr:hover {
-  background-color: #f1f1f1; /* Light gray on hover */
+  background-color: #7358b1 !important;
 }
 
 /* Remove default borders for cards */
@@ -51,10 +57,8 @@ p {
 }
 
 /* Close button */
-.btn-sm.btn-danger {
-  border-radius: 50%; /* Circular close button */
-  padding: 5px 10px;
-  font-size: 0.8rem;
+.card-header .btn-sm.btn-danger {
+  margin-left: auto; /* Push the button to the rightmost area */
 }
 
 /* Styling table header */
@@ -114,4 +118,39 @@ p {
     flex: 0 0 100%; /* Both sections take full width on small screens */
     max-width: 100%;
   }
+}
+ .card-header{
+  background: linear-gradient(45deg,#4099ff,#4fbac9a5);
+ }
+ th{
+  background: #4fbac9a5;
+ }
+
+ .table-container {
+  max-height: 500px; /* Adjust height as needed */
+  overflow-y: auto;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+/* Container for the table with custom scrollbar */
+.table-container {
+  max-height: 550px; /* Adjust height as needed */
+  overflow-y: auto;
+}
+
+/* Custom scrollbar styling for WebKit browsers */
+.table-container::-webkit-scrollbar {
+  width: 8px; /* Reduced width of the scrollbar */
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #ffffff; /* Light background for the track */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #f0eeeebe; /* White color for the thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
 }
