@@ -1,0 +1,18 @@
+[33m1a9b438[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mabel[m[33m)[m ui change using modal
+[33mc6af653[m merged with amal
+[33ma54f49e[m gerge branch 'abel' of https://github.com/abelmathew07/hrm-app into ti
+[33m03a8106[m changed cards height
+[33m8886e20[m tina needs the old code
+[33m4cbb171[m added cards component
+[33m900be0a[m added fontawesome cdn in index.html, add a div to wrap app-header, made header sticky and changed design, changed dashboard design, added global styles in style.css, added bootstrap
+[33m2109cc2[m changed close button
+[33m36ba5cb[m changed table display in employee details component
+[33ma741b25[m before merging branch tina
+[33m20935e1[m change in employee
+[33mec7393b[m added router links and created department component
+[33mf9d9e23[m dddd
+[33mfe2eb1f[m aaaaa
+[33m722069f[m aa
+[33mb010029[m aa
+[33m70d945a[m first code
+[33m1da49ba[m initial commit
