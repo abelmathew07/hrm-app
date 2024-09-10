@@ -26,7 +26,7 @@
     transition: all 0.3s ease-in-out;
 }
 .card:hover{
-    scale: 1.01;
+    /* scale: 1.01; */
     background: linear-gradient(45deg,#256fc4,#5dd6e6a5);
   }
 .stats-box {
