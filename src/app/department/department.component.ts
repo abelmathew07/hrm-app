@@ -1,14 +1,18 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup,FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { DepartmentService } from './department.service'; // Adjust path as needed
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DepartmentService } from './department.service';
+import { DepartmentPerformanceChartComponent } from './department-performance-chart/department-performance-chart.component';
+import { DepartmentOverviewComponent } from "./department-overview/department-overview.component";
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
   styleUrls: ['./department.component.css'],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule], // Import necessary modules for this component
+  imports: [CommonModule, ReactiveFormsModule, FormsModule,  DepartmentOverviewComponent, DepartmentPerformanceChartComponent],
 })
 export class DepartmentComponent implements OnInit {
   departments: any[] = [];
@@ -16,6 +20,9 @@ export class DepartmentComponent implements OnInit {
   selectedDepartment: any = null;
 
   departmentForm: FormGroup;
+  totalDepartments$: Observable<number>;
+  totalEmployees$: Observable<number>;
+  performanceData: { department: string; score: number; }[] = [];
 
   constructor(private fb: FormBuilder, private departmentService: DepartmentService) {
     this.departmentForm = this.fb.group({
@@ -23,6 +30,15 @@ export class DepartmentComponent implements OnInit {
       head: [''],
       employees: [''],
     });
+
+    // Initialize observables
+    this.totalDepartments$ = this.departmentService.getDepartments().pipe(
+      map(departments => departments.length)
+    );
+
+    this.totalEmployees$ = this.departmentService.getDepartments().pipe(
+      map(departments => departments.reduce((total, department) => total + department.employees, 0))
+    );
   }
 
   ngOnInit() {
@@ -36,7 +52,7 @@ export class DepartmentComponent implements OnInit {
     if (!this.searchQuery) {
       return this.departments;
     }
-    return this.departments.filter((department) =>
+    return this.departments.filter(department =>
       department.name.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }
@@ -50,7 +66,7 @@ export class DepartmentComponent implements OnInit {
   // Edit department details
   editDepartment(department: any) {
     this.selectedDepartment = department;
-    this.departmentForm.patchValue(department); // Pre-fill form with department data
+    this.departmentForm.patchValue(department);
   }
 
   // Delete department
