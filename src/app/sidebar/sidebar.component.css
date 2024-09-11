@@ -1,0 +1,9 @@
+.sidebar {
+    width: 250px;
+    transition: transform 0.3s ease;
+  }
+  
+  .d-none {
+    transform: translateX(-100%);
+  }
+  

@@ -1,0 +1,26 @@
+<!-- Hamburger Button - Visible on small screens -->
+<button 
+  class="btn btn-primary d-lg-none" 
+  (click)="toggleSidebar()">
+  <i class="bi bi-list"></i> <!-- Bootstrap icon for Hamburger -->
+</button>
+
+<!-- Sidebar -->
+<nav 
+  [ngClass]="{'d-none': !isSidebarOpen && isSmallScreen, 'd-lg-block': !isSmallScreen}" 
+  class="sidebar bg-light border-end position-fixed vh-100 p-3">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Settings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Logout</a>
+    </li>
+  </ul>
+</nav>

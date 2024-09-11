@@ -10,6 +10,8 @@
   .icon-bg {
     background: linear-gradient(45deg,#4099ff,#4fbac9a5);
   }
-  .table-bg{
-    background-color: #4099ff !important;
+
+  table tr:hover {
+    background-color: #f2f2f2 !important;
+    cursor: pointer;
   }
