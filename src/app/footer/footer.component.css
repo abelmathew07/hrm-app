@@ -1,10 +1,12 @@
 .app-footer {
-  background: linear-gradient(to right, #FF902F 0%, #fc6075 100%);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  width: 100%;
-}
-p {
-  margin-bottom: 0 !important;
-}
+    background-color: #00246B;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    /* position: absolute; */
+    margin-bottom: 0;
+    bottom: 0 !important;
+    width: 100%;
+
+  }
+  

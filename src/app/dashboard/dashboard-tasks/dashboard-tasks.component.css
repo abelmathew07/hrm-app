@@ -2,7 +2,7 @@
     color: purple !important;
 }
 .icon-bg {
-    background-color: #FFFFFF !important;
+    background: linear-gradient(45deg, #94b7e8,#144ea3 );
   }
 .card {
     border: 0;
