@@ -1,9 +1,63 @@
-.sidebar {
-    width: 250px;
-    transition: transform 0.3s ease;
+/* Sidebar styles */
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 50px;
+  bottom: 50px;
+  left: -250px;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  background-color: #0653a0 !important; /* Dark theme */
+  transition: left 0.3s ease;
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#sidebar .nav-link {
+  padding: 10px 15px;
+  font-size: 16px;
+  display: block;
+  color: #ffffff;
+}
+
+#sidebar .nav-link.active {
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+#sidebar .nav-link:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+
+/* Content area styles */
+.content-container {
+  margin-left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Light background for the content area */
+  transition: margin-left 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  .content-container {
+    margin-left: 250px; /* Match the width of the sidebar */
+    width: calc(100% - 250px);
   }
-  
-  .d-none {
-    transform: translateX(-100%);
+
+  #sidebar {
+    left: 0;
   }
-  
+
+  #sidebar:not(.active) {
+    left: -250px;
+  }
+}
+
+/* Ensure the close button is functional on all screen sizes */
+#sidebar.active {
+  left: 0;
+}

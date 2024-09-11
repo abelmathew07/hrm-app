@@ -1,29 +1,29 @@
 import { NgClass } from '@angular/common';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass,RouterOutlet],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent{
   isSidebarOpen = false;
-  isSmallScreen = false;
-
-  ngOnInit() {
-    this.checkScreenSize();
-  }
+  isLargeScreen = false;
 
   @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.checkScreenSize();
+  onResize(event: any) {
+    this.isLargeScreen = window.innerWidth >= 992;
+    if (this.isLargeScreen) {
+      this.isSidebarOpen = true;
+    }
   }
 
-  checkScreenSize() {
-    this.isSmallScreen = window.innerWidth < 768;
-    if (!this.isSmallScreen) {
+  ngOnInit() {
+    this.isLargeScreen = window.innerWidth >= 992;
+    if (this.isLargeScreen) {
       this.isSidebarOpen = true;
     }
   }
