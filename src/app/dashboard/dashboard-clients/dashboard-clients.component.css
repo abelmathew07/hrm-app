@@ -1,0 +1,15 @@
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .table-responsive table {
+    width: 100%;
+    min-width: 100%;
+  }
+  .icon-bg {
+    background: linear-gradient(45deg,#4099ff,#4fbac9a5);
+  }
+  .table-bg{
+    background-color: #4099ff !important;
+  }

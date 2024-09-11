@@ -1,4 +1,25 @@
 <div class="container-fluid">
-  <h1>HRM Dashboard</h1>
-<app-cards/>
+  <div class="row">
+    <div class="col-md-12">
+      <app-cards />
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4">
+          <app-dashboard-tasks />
+        </div>
+        <div class="col-md-8">
+          <app-dashboard-clients />
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-6">
+          <app-dashboard-projects />
+        </div>
+        <div class="col-md-6">
+          <app-dashboard-payments />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
