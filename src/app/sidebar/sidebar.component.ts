@@ -1,30 +1,39 @@
-import { NgClass } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { NgClass, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [NgClass,RouterOutlet,RouterLink],
+  imports: [NgClass, RouterOutlet,RouterLink],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrls: ['./sidebar.component.css'],
 })
-export class SidebarComponent{
+export class SidebarComponent {
   isSidebarOpen = false;
   isLargeScreen = false;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.isLargeScreen = window.innerWidth >= 992;
-    if (this.isLargeScreen) {
-      this.isSidebarOpen = true;
+    if (isPlatformBrowser(this.platformId)) {
+      // Check if running in the browser before accessing window
+      this.isLargeScreen = window.innerWidth >= 992;
+      // Control sidebar behavior based on screen size
+      if (this.isLargeScreen) {
+        this.isSidebarOpen = false;
+      }
     }
   }
 
   ngOnInit() {
-    this.isLargeScreen = window.innerWidth >= 992;
-    if (this.isLargeScreen) {
-      this.isSidebarOpen = true;
+    if (isPlatformBrowser(this.platformId)) {
+      // Check if running in the browser before accessing window
+      this.isLargeScreen = window.innerWidth >= 992;
+      if (this.isLargeScreen) {
+        this.isSidebarOpen = false; // Set sidebar state based on screen size
+      }
     }
   }
 
