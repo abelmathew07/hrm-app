@@ -26,7 +26,7 @@
     transition: all 0.3s ease-in-out;
 }
 .stats-box {
-    background: whitesmoke;
+    background: rgb(255, 255, 255) !important;
     border: 1px solid #4fbac9a5;  
     margin: 0 0 15px;
     padding: 5px;
