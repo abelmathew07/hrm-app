@@ -1,11 +1,8 @@
 
-<div class="container mt-4">
-    <h1 class="text-center mb-4">Departments</h1>
-  
-    <br>
-  
+<div class="container-fluid mt-3">
+    <h1 class="fs-3 title">Departments</h1>
     <!-- Search Box -->
-    <div class="mb-4 searchbox">
+    <div class="my-3 searchbox">
       <input type="text" class="form-control" placeholder="Search Departments" [(ngModel)]="searchQuery">
     </div>
   
@@ -14,8 +11,14 @@
         <!-- Department Table -->
         <div class="col-md-8">
             <div class="table-responsive">
-                <table class="table table-striped table-bordered">
-                    <thead class="table-dark">
+                <table class="table table-hover" style="--bs-table-hover-bg: #b6d8fcd3">
+                    <thead class="table-dark"style="
+                    position: sticky;
+                    top: 0;
+                    background: white;
+                    z-index: 10;
+                    padding-top: 10px;
+                  ">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
@@ -71,9 +74,9 @@
 </div>
 
 <!-- Section 2 -->
-<div class="d-flex flex-wrap justify-content-between align-items-center mt-4" style="background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
-    <app-department-overview class="flex-fill me-2" style="background-color: #e9ecef; padding: 15px; border-radius: 8px;"></app-department-overview>
-    <app-department-performance-chart class="flex-fill ms-2" [performanceData]="performanceData" style="background-color: #e9ecef; padding: 15px; border-radius: 8px;"></app-department-performance-chart>
+<div class="d-flex flex-wrap justify-content-between align-items-lg-start mt-4 gap-2" style="border-radius: 8px;">
+    <app-department-overview class="flex-fill mt-3" style="background-color: #e9ecef;border-radius: 8px;"></app-department-overview>
+    <app-department-performance-chart class="flex-fill mt-3" [performanceData]="performanceData" style="background-color: #e9ecef; padding: 15px; border-radius: 8px;"></app-department-performance-chart>
 </div>
 
 

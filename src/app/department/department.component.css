@@ -1,9 +1,6 @@
-*{
-    font-family: 'Times New Roman';
-}
+
 .container {
     max-width: 100%;
-    padding: 20px;
     
 }
 .table {
@@ -48,7 +45,7 @@
     transition: background-color 0.3s;
 }
 .col-md-4 {
-    background-color: #f8f9fa; /* Light background color */
+    background-color: white; /* Light background color */
     border: 1px solid #dee2e6; /* Border for definition */
     border-radius: 0.5rem; /* Rounded corners */
     padding: 2rem; /* Padding for spacing */
@@ -56,11 +53,18 @@
 }
 .edit-btn{
     background-color: #007bff;
+    color: white;
 }
 .delete-btn{
 background-color: rgb(255, 55, 55);
 }
 .searchbox{
     width: 30%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411); */
 }
+.title{
+    color: #00246b;
+}
+th{
+    background-color:#144ea3;
+   }
