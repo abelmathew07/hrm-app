@@ -2,7 +2,7 @@
     color: purple !important;
 }
 .icon-bg {
-    background: linear-gradient(45deg,#4099ff,#4fbac9a5);
+    background: linear-gradient(45deg, #94b7e8,#144ea3 );
   }
 .card {
     border: 0;
@@ -25,12 +25,8 @@
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-.card:hover{
-    /* scale: 1.01; */
-    background: linear-gradient(45deg,#256fc4,#5dd6e6a5);
-  }
 .stats-box {
-    background: whitesmoke;
+    background: rgb(255, 255, 255) !important;
     border: 1px solid #4fbac9a5;  
     margin: 0 0 15px;
     padding: 5px;
@@ -39,3 +35,6 @@
     margin: 0;
     font-size: 12px;
 }
+.card-title{
+    color: #00246b;
+  }
