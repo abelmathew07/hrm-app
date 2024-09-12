@@ -1,5 +1,5 @@
 th, td {
-  padding: 20px;
+  padding: 14px;
   text-align: left;
 }
 th{
@@ -158,4 +158,6 @@ p {
   background: #f0eeeebe; /* White color for the thumb */
   border-radius: 10px; /* Rounded corners for the scrollbar thumb */
 }
-
+.table-active {
+  --bs-table-active-bg: #b6d8fcd3;
+}
