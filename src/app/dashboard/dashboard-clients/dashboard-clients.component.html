@@ -3,7 +3,10 @@
   class="table-responsive card p-3 rounded mt-3"
   style="max-height: 326px; overflow-y: auto"
 >
-  <table class="table table-hover rounded" style="--bs-table-hover-color: #0e30f6;--bs-table-hover-bg: #ffffff;" >
+  <table
+    class="table table-hover rounded"
+    style="--bs-table-hover-color: #0e30f6; --bs-table-hover-bg: #ffffff"
+  >
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -14,68 +17,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Client 1</td>
-        <td>project 1</td>
-        <td>(123) 456-7890</td>
-        <td>client1example.com</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Client 2</td>
-        <td>project 2</td>
-        <td>(123) 456-7890</td>
-        <td>client2example.com</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Client 3</td>
-        <td>project 3</td>
-        <td>(123) 456-7890</td>
-        <td>client3example.com</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>Client 4</td>
-        <td>project 4</td>
-        <td>(123) 456-7890</td>
-        <td>client1example.com</td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td>Client 5</td>
-        <td>project 5</td>
-        <td>(123) 456-7890</td>
-        <td>client2example.com</td>
-      </tr>
-      <tr>
-        <th scope="row">6</th>
-        <td>Client 6</td>
-        <td>project 6</td>
-        <td>(123) 456-7890</td>
-        <td>client3example.com</td>
-      </tr>
-      <tr>
-        <th scope="row">7</th>
-        <td>Client 7</td>
-        <td>project 7</td>
-        <td>(123) 456-7890</td>
-        <td>client3example.com</td>
-      </tr>
-      <tr>
-        <th scope="row">8</th>
-        <td>Client 8</td>
-        <td>project 8</td>
-        <td>(123) 456-7890</td>
-        <td>client3example.com</td>
-      </tr>
-      <tr>
-        <th scope="row">9</th>
-        <td>Client 9</td>
-        <td>project 9</td>
-        <td>(123) 456-7890</td>
-        <td>client3example.com</td>
+      <tr *ngFor="let client of clients; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ client.clientName }}</td>
+        <td>{{ client.projectName }}</td>
+        <td>{{ client.phone }}</td>
+        <td>{{ client.email }}</td>
       </tr>
     </tbody>
   </table>

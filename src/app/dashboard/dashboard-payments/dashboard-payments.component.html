@@ -14,61 +14,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Invoice 1</td>
-        <td>Client 1</td>
-        <td>01/01/2000</td>
-        <td>$100.00</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Invoice 2</td>
-        <td>Client 2</td>
-        <td>01/01/2000</td>
-        <td>$200.00</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Invoice 3</td>
-        <td>Client 3</td>
-        <td>01/01/2000</td>
-        <td>$300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Invoice 3</td>
-        <td>Client</td>
-        <td>01/01/2000</td>
-        <td>$300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Invoice 3</td>
-        <td>Client</td>
-        <td>01/01/2000</td>
-        <td>$300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Invoice 3</td>
-        <td>Client</td>
-        <td>01/01/2000</td>
-        <td>$300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Invoice 3</td>
-        <td>Client</td>
-        <td>01/01/2000</td>
-        <td>$300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Invoice 3</td>
-        <td>Client</td>
-        <td>01/01/2000</td>
-        <td>$300.00</td>
+      <tr *ngFor="let payment of payments; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>Invoice {{ payment.invoiceId }}</td>
+        <td>{{ payment.clientName }}</td>
+        <td>{{ payment.paymentDate | date: 'MM/dd/yyyy' }}</td> <!-- Adjust date format if needed -->
+        <td>${{ payment.paidAmount | number: '1.0-0' }}</td> <!-- Format number if needed -->
       </tr>
     </tbody>
   </table>
