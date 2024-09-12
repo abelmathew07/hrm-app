@@ -13,7 +13,7 @@ export const clientdata = [
         phone: '(123) 456-7890',
         email: 'client2example.com',
         id: 2,
-        img: '/clientImg/image1.png'
+        img: '/clientImg/image2.png'
     },
     {
         clientName: 'Client 3',
@@ -21,7 +21,7 @@ export const clientdata = [
         phone: '(123) 456-7890',   
         email: 'client3example.com',
         id: 3,
-        img: '/clientImg/image1.png'
+        img: '/clientImg/image3.png'
     },
     {
         clientName: 'Client 4',
@@ -29,7 +29,7 @@ export const clientdata = [
         phone: '(123) 456-7890',
         email: 'client1example.com',
         id: 4,
-        img: '/clientImg/image1.png'
+        img: '/clientImg/image4.png'
     },
     {
         clientName: 'Client 5',
@@ -37,7 +37,7 @@ export const clientdata = [
         phone: '(123) 456-7890',
         email: 'client1example.com',
         id: 5,
-        img: '/clientImg/image1.png'
+        img: '/clientImg/image5.png'
     },
     {
         clientName: 'Client 6', 
@@ -45,7 +45,7 @@ export const clientdata = [
         phone: '(123) 456-7890',
         email: 'client2example.com',
         id: 6,
-        img: '/clientImg/image1.png'
+        img: '/clientImg/image6.png'
     },
     {
         clientName: 'Client 7',
@@ -53,7 +53,7 @@ export const clientdata = [
         phone: '(123) 456-7890',   
         email: 'client3example.com',
         id: 7,
-        img: '/clientImg/image1.png'
+        img: '/clientImg/image7.png'
     },
     {
         clientName: 'Client 8',
@@ -61,7 +61,7 @@ export const clientdata = [
         phone: '(123) 456-7890',
         email: 'client1example.com',
         id: 8,
-        img: '/clientImg/image1.png'
+        img: '/clientImg/image8.png'
     },
     {
         clientName: 'Client 9',
@@ -69,7 +69,7 @@ export const clientdata = [
         phone: '(123) 456-7890',
         email: 'client1example.com',
         id: 9,
-        img: '/clientImg/image1.png'
+        img: '/clientImg/image9.png'
     }
 ]
 
