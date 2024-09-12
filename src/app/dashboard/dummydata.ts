@@ -182,3 +182,15 @@ export const paymentdata = [
         paidAmount: 4000
     }
 ]
+
+export const taskStatistics = [
+    {
+        totalTask:68,
+        completedTask:30,
+        pendingTask:20,
+        inProgressTask:10,
+        onHoldTask:5,
+        reviewTask:2,
+        overdueTask:1
+    }
+]
