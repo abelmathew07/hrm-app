@@ -6,7 +6,7 @@
   }
   
   .overview-section {
-    background-color: #0d6efd;
+    background: linear-gradient(45deg, #256fc4, #5dd6e6a5);
     border-radius: 8px;
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -15,4 +15,7 @@
   h2 {
     margin-bottom: 1rem;
   }
+  .title{
+    color: #00246b;
+}
   
