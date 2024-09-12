@@ -1,3 +1,16 @@
+/* Sidebar styles */
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 50px;
+  bottom: 50px;
+  left: -250px;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  background-color: #0653a0 !important; /* Dark theme */
+  transition: left 0.3s ease;
+}
 
 #sidebar.active {
   left: 0;
