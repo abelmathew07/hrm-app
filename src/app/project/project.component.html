@@ -1,44 +1,41 @@
 <div class="container card-title mt-3">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h3 class="fs-3 title">Projects</h3>
-  
-      <!-- Filter Options -->
-      <div class="btn-group">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Filter
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" (click)="filterByStatus('Ongoing')">Filter by Status: Ongoing</a></li>
-          <li><a class="dropdown-item" (click)="filterByStatus('Completed')">Filter by Status: Completed</a></li>
-          <li><a class="dropdown-item" (click)="filterByStatus('On Hold')">Filter by Status: On Hold</a></li>
-          <li><a class="dropdown-item" (click)="clearFilters()">Clear Filters</a></li>
-        </ul>
-      </div>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="fs-3 title">Projects</h3>
+
+    <!-- Filter Options -->
+    <div class="btn-group">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Filter
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" (click)="filterByStatus('Ongoing')">Filter by Status: Ongoing</a></li>
+        <li><a class="dropdown-item" (click)="filterByStatus('Completed')">Filter by Status: Completed</a></li>
+        <li><a class="dropdown-item" (click)="filterByStatus('On Hold')">Filter by Status: On Hold</a></li>
+        <li><a class="dropdown-item" (click)="clearFilters()">Clear Filters</a></li>
+      </ul>
     </div>
-  
-    <div class="row">
-      <!-- Container column taking 70% width and centering the content -->
-      <div class="col-8">
-        <div *ngFor="let project of filteredProjects" class="mb-3">
-          <!-- Card -->
-          <div class="card shadow-sm" (click)="showProjectDetails(project)" style="cursor: pointer;">
-            <div class="card-body">
-              <!-- Always Displayed Part -->
-              <h5 class="card-title">{{ project.name }}</h5>
-              <p class="card-text">Status: {{ project.status }}</p>
-  
-              <!-- Expandable Project Details Section -->
-              <div *ngIf="selectedProject === project" class="mt-3">
-                <hr />
-                <p><strong>Deadline:</strong> {{ project.deadline }}</p>
-                <p><strong>Client Name:</strong> {{ project.clientName }}</p>
-                <p><strong>Assigned Date:</strong> {{ project.assignedDate }}</p>
-                <p><strong>Payment Status:</strong> {{ project.paymentStatus }}</p>
-              </div>
+  </div>
+
+  <div class="row">
+    <!-- Container column taking 70% width and centering the content -->
+    <div class="col-8">
+      <div *ngFor="let project of filteredProjects" class="mb-3">
+        <!-- Card -->
+        <div class="card shadow-sm" (click)="showProjectDetails(project)" style="cursor: pointer;">
+          <div class="card-body">
+            <!-- Always Displayed Part -->
+            <h5 class="card-title">{{ project.name }}</h5>
+            <p class="card-text">Status: {{ project.status }}</p>
+
+            <!-- Expandable Project Details Section -->
+            <div *ngIf="selectedProject === project" class="mt-3">
+              <hr />
+              <p><strong>Deadline:</strong> {{ project.deadline }}</p>
+              <p><strong>Client Name:</strong> {{ project.clientName }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
