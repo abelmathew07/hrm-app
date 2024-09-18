@@ -8,6 +8,7 @@
         Filter
       </button>
       <ul class="dropdown-menu">
+        <li><a class="dropdown-item" (click)="filterByStatus('Active')">Filter by Status: Active</a></li>
         <li><a class="dropdown-item" (click)="filterByStatus('Ongoing')">Filter by Status: Ongoing</a></li>
         <li><a class="dropdown-item" (click)="filterByStatus('Completed')">Filter by Status: Completed</a></li>
         <li><a class="dropdown-item" (click)="filterByStatus('On Hold')">Filter by Status: On Hold</a></li>

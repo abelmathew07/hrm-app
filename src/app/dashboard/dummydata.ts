@@ -76,13 +76,13 @@ export const clientdata = [
 export const projectdata = [
     {
         projectName: 'Project 1',
-        status: 'Active',
+        status: 'Ongoing',
         id: 1,
         deadline: '2022-01-01',
     },
     {
         projectName: 'Project 2',
-        status: 'Active',
+        status: 'Completed',
         id: 2,
         deadline: '2022-01-01',
     },
@@ -94,7 +94,7 @@ export const projectdata = [
     },
     {
         projectName: 'Project 4',
-        status: 'Active',
+        status: 'On Hold',
         id: 4,
         deadline: '2022-01-01',
     },
