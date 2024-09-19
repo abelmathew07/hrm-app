@@ -129,57 +129,82 @@ export const paymentdata = [
         id: 1,
         invoiceId: 1,
         clientName: 'Client 1',
+        projectName: 'Project 1',
         paymentDate: '2022-01-01',
-        paidAmount: 1000
+        paidAmount: 1000,
+        paymentStatus: 'Paid'
     },
     {
         id: 2,
         invoiceId: 2,
         clientName: 'Client 2',
+        projectName: 'Project 2',
         paymentDate: '2022-01-01',
-        paidAmount: 2000
+        paidAmount: 2000,
+        paymentStatus: 'Paid'
     },
     {
         id: 3,
         invoiceId: 3,
         clientName: 'Client 3',
+        projectName: 'Project 3',
         paymentDate: '2022-01-01',
-        paidAmount: 3000
+        paidAmount: 3000,
+        paymentStatus: 'Paid'
     },
     {
         id: 4,
         invoiceId: 4,
         clientName: 'Client 4', 
+        projectName: 'Project 4',
         paymentDate: '2022-01-01',
-        paidAmount: 4000
+        paidAmount: 4000,
+        paymentStatus: 'Paid'
     },
     {
         id: 5,
         invoiceId: 5,
         clientName: 'Client 5',
+        projectName: 'Project 5',
         paymentDate: '2022-01-01',
-        paidAmount: 1000
+        paidAmount: 1000,
+        paymentStatus: 'Paid'
     },
     {
         id: 6,
         invoiceId: 6,
         clientName: 'Client 6',
+        projectName: 'Project 6',
         paymentDate: '2022-01-01',
-        paidAmount: 2000
+        paidAmount: 2000,
+        paymentStatus: 'Paid'
     },
     {
         id: 7,
         invoiceId: 7,
         clientName: 'Client 7',
+        projectName: 'Project 7',
         paymentDate: '2022-01-01',
-        paidAmount: 3000
+        paidAmount: 3000,
+        paymentStatus: 'Paid'
     },
     {
         id: 8,
         invoiceId: 8,
         clientName: 'Client 8', 
+        projectName: 'Project 8',
         paymentDate: '2022-01-01',
-        paidAmount: 4000
+        paidAmount: 4000,
+        paymentStatus: 'Paid'
+    },
+    {
+        id: 9,
+        invoiceId: 9,
+        clientName: 'Client 8', 
+        projectName: 'Project 8',
+        paymentDate: '2022-01-01',
+        paidAmount: 4000,
+        paymentStatus: 'Paid'
     }
 ]
 
