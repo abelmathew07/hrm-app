@@ -1,5 +1,5 @@
 <div class="container card-title mt-3">
-  <div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-3">
     <h3 class="fs-3 title">Projects</h3>
 
     <!-- Filter Options -->
@@ -10,7 +10,7 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Filter
+        Filter by Status
       </button>
       <ul class="dropdown-menu">
         <li>
@@ -42,7 +42,7 @@
 
   <div class="row">
     <!-- Container column taking 70% width and centering the content -->
-    <div class="col-8">
+    <div class="col-12 col-md-10 col-lg-8">
       <div *ngFor="let project of filteredProjects" class="mb-3">
         <!-- Card -->
         <div

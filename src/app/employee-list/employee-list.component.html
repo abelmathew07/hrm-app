@@ -1,11 +1,11 @@
 <div class="container-fluid mt-3">
-  <div class="d-flex justify-content-between align-items-center mb-2">
-    <h3 class="fs-3 title">Employee List</h3>
+  <div class="d-flex row-gap-2 justify-content-between align-items-center mb-2">
+    <h3 class="fs-3 title text-center text-lg-start text-md-start">Employee List</h3>
     <div class="d-flex align-items-center">
-      <button class="btn btn-primary me-2" (click)="openModal()">
+      <button class="btn btn-primary me-2 mb-2 mb-md-0" (click)="openModal()">
         Add Employee
       </button>
-      <div class="w-50">
+      <div class="w-auto">
         <select
           id="filterDepartment"
           [(ngModel)]="filterDepartment"

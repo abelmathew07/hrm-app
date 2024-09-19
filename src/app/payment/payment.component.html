@@ -1,12 +1,24 @@
 <div class="container mt-3">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h3 class="fs-3 title">Payments</h3>
+    <!-- Header with Filter -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-3">
+      <h3 class="fs-3 title mb-3 mb-md-0">Payments</h3>
+  
+      <!-- Filter by Client Name Field (positioned to the right for medium and larger screens) -->
+      <div class="col-10 col-md-3 col-lg-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by Client Name"
+          [(ngModel)]="clientSearch"
+          (input)="filterByClientName()"
+        />
+      </div>
     </div>
   
     <div class="row">
-      <!-- Container column taking 70% width and centering the content -->
-      <div class="col-8">
-        <div *ngFor="let client of clients" class="mb-3">
+      <!-- Responsive Column for Cards -->
+      <div class="col-12 col-md-10 col-lg-8">
+        <div *ngFor="let client of filteredClients" class="mb-3">
           <!-- Card for each client -->
           <div class="card shadow-sm" (click)="showClientPayments(client)" style="cursor: pointer;">
             <div class="card-body">
@@ -19,38 +31,41 @@
                 </div>
                 <i class="fa-solid fa-caret-down"></i>
               </div>
+  
               <!-- Expandable Payment Details Section -->
               <div *ngIf="selectedClient === client" class="mt-3">
                 <hr />
-                <!-- Payment Table -->
-                <table class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>Invoice ID</th>
-                      <th>Project Name</th>
-                      <th>Project Status</th>
-                      <th>Amount</th>
-                      <th>Payment Status</th>
-                      <th>Date of Payment</th>
-                      <th>Invoice</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let payment of client.payments">
-                      <td>{{ payment.invoiceId }}</td>
-                      <td>{{ payment.projectName }}</td>
-                      <td>{{ payment.status }}</td> <!-- Project status isn't in dummy data; set to N/A or adjust as needed -->
-                      <td>{{ payment.paidAmount | currency }}</td>
-                      <td>{{ payment.paymentStatus }}</td>
-                      <td>{{ payment.paymentDate || 'N/A' }}</td>
-                      <td>
-                        <button class="btn btn-primary btn-sm" (click)="generateInvoice(payment.invoiceId, $event)">
-                          Generate Invoice
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <!-- Responsive Payment Table -->
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Invoice ID</th>
+                        <th>Project Name</th>
+                        <th>Project Status</th>
+                        <th>Amount</th>
+                        <th>Payment Status</th>
+                        <th>Date of Payment</th>
+                        <th>Invoice</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let payment of client.payments">
+                        <td>{{ payment.invoiceId }}</td>
+                        <td>{{ payment.projectName }}</td>
+                        <td>{{ payment.status }}</td>
+                        <td>{{ payment.paidAmount | currency }}</td>
+                        <td>{{ payment.paymentStatus }}</td>
+                        <td>{{ payment.paymentDate || 'N/A' }}</td>
+                        <td>
+                          <button class="btn btn-primary btn-sm" (click)="generateInvoice(payment.invoiceId, $event)">
+                            Generate Invoice
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
