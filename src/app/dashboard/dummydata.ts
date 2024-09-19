@@ -130,6 +130,7 @@ export const paymentdata = [
         invoiceId: 1,
         clientName: 'Client 1',
         projectName: 'Project 1',
+        status: 'Active',
         paymentDate: '2022-01-01',
         paidAmount: 1000,
         paymentStatus: 'Paid'
@@ -139,6 +140,7 @@ export const paymentdata = [
         invoiceId: 2,
         clientName: 'Client 2',
         projectName: 'Project 2',
+        status: 'Active',
         paymentDate: '2022-01-01',
         paidAmount: 2000,
         paymentStatus: 'Paid'
@@ -148,6 +150,7 @@ export const paymentdata = [
         invoiceId: 3,
         clientName: 'Client 3',
         projectName: 'Project 3',
+        status: 'Active',
         paymentDate: '2022-01-01',
         paidAmount: 3000,
         paymentStatus: 'Paid'
@@ -157,6 +160,7 @@ export const paymentdata = [
         invoiceId: 4,
         clientName: 'Client 4', 
         projectName: 'Project 4',
+        status: 'Active',
         paymentDate: '2022-01-01',
         paidAmount: 4000,
         paymentStatus: 'Paid'
@@ -166,6 +170,7 @@ export const paymentdata = [
         invoiceId: 5,
         clientName: 'Client 5',
         projectName: 'Project 5',
+        status: 'Active',
         paymentDate: '2022-01-01',
         paidAmount: 1000,
         paymentStatus: 'Paid'
@@ -175,6 +180,7 @@ export const paymentdata = [
         invoiceId: 6,
         clientName: 'Client 6',
         projectName: 'Project 6',
+        status: 'Active',
         paymentDate: '2022-01-01',
         paidAmount: 2000,
         paymentStatus: 'Paid'
@@ -184,6 +190,7 @@ export const paymentdata = [
         invoiceId: 7,
         clientName: 'Client 7',
         projectName: 'Project 7',
+        status: 'Active',
         paymentDate: '2022-01-01',
         paidAmount: 3000,
         paymentStatus: 'Paid'
@@ -193,6 +200,7 @@ export const paymentdata = [
         invoiceId: 8,
         clientName: 'Client 8', 
         projectName: 'Project 8',
+        status: 'Active',
         paymentDate: '',
         paidAmount: 4000,
         paymentStatus: 'Pending'
@@ -202,6 +210,7 @@ export const paymentdata = [
         invoiceId: 9,
         clientName: 'Client 8', 
         projectName: 'Project 9',
+        status: 'Active',
         paymentDate: '2022-01-01',
         paidAmount: 4000,
         paymentStatus: 'Paid'
@@ -211,6 +220,7 @@ export const paymentdata = [
         invoiceId: 10,
         clientName: 'Client 2', 
         projectName: 'Project 10',
+        status: 'Active',
         paymentDate: '2022-03-01',
         paidAmount: 5000,
         paymentStatus: 'Paid'
@@ -220,6 +230,7 @@ export const paymentdata = [
         invoiceId: 11,
         clientName: 'Client 4', 
         projectName: 'Project 11',
+        status: 'Active',
         paymentDate: '2022-01-04',
         paidAmount: 3000,
         paymentStatus: 'Paid'
@@ -229,6 +240,7 @@ export const paymentdata = [
         invoiceId: 12,
         clientName: 'Client 4', 
         projectName: 'Project 12',
+        status: 'Active',
         paymentDate: '',
         paidAmount: 4500,
         paymentStatus: 'Pending'

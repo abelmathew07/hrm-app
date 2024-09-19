@@ -39,7 +39,7 @@
                     <tr *ngFor="let payment of client.payments">
                       <td>{{ payment.invoiceId }}</td>
                       <td>{{ payment.projectName }}</td>
-                      <td>N/A</td> <!-- Project status isn't in dummy data; set to N/A or adjust as needed -->
+                      <td>{{ payment.status }}</td> <!-- Project status isn't in dummy data; set to N/A or adjust as needed -->
                       <td>{{ payment.paidAmount | currency }}</td>
                       <td>{{ payment.paymentStatus }}</td>
                       <td>{{ payment.paymentDate || 'N/A' }}</td>
