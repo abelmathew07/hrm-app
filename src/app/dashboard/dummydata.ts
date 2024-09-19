@@ -193,18 +193,45 @@ export const paymentdata = [
         invoiceId: 8,
         clientName: 'Client 8', 
         projectName: 'Project 8',
-        paymentDate: '2022-01-01',
+        paymentDate: '',
         paidAmount: 4000,
-        paymentStatus: 'Paid'
+        paymentStatus: 'Pending'
     },
     {
         id: 9,
         invoiceId: 9,
         clientName: 'Client 8', 
-        projectName: 'Project 8',
+        projectName: 'Project 9',
         paymentDate: '2022-01-01',
         paidAmount: 4000,
         paymentStatus: 'Paid'
+    },
+    {
+        id: 10,
+        invoiceId: 10,
+        clientName: 'Client 2', 
+        projectName: 'Project 10',
+        paymentDate: '2022-03-01',
+        paidAmount: 5000,
+        paymentStatus: 'Paid'
+    },
+    {
+        id: 11,
+        invoiceId: 11,
+        clientName: 'Client 4', 
+        projectName: 'Project 11',
+        paymentDate: '2022-01-04',
+        paidAmount: 3000,
+        paymentStatus: 'Paid'
+    },
+    {
+        id: 12,
+        invoiceId: 12,
+        clientName: 'Client 4', 
+        projectName: 'Project 12',
+        paymentDate: '',
+        paidAmount: 4500,
+        paymentStatus: 'Pending'
     }
 ]
 
