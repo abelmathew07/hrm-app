@@ -1,0 +1,28 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    cursor: pointer;
+  }
+  
+  .table {
+    margin-top: 10px;
+  }
+  
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .title,.card-title{
+    color: #00246b;
+  }
+  .card:hover{
+    transform: scale(1.01);
+    transition-duration: .3s;
+    box-shadow: 0 10px 20px rgba(5, 5, 108, 0.295), 0 4px 8px rgba(0, 0, 0, 0.06) !important;
+}
+.card-text{
+    color:rgb(153, 7, 7);
+}

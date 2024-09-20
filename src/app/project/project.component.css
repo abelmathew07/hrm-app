@@ -1,0 +1,15 @@
+.card-title{
+    color: #00246b;
+  }
+
+  .container .col-8 {
+    width: 70%;
+  }
+.card-text{
+    color:rgb(153, 7, 7);
+}
+.card:hover{
+    transform: scale(1.01);
+    transition-duration: .3s;
+    box-shadow: 0 10px 20px rgba(5, 5, 108, 0.295), 0 4px 8px rgba(0, 0, 0, 0.06) !important;
+}
