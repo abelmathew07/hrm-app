@@ -2,7 +2,7 @@
   min-height: calc(
     100vh - 100px
   ); /* Adjust the height based on header and footer */
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 body {
   margin: 0;

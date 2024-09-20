@@ -56,6 +56,12 @@ export class DepartmentService {
   deleteDepartment(id: number) {
     const currentDepartments = this.departments.getValue();
     const updatedDepartments = currentDepartments.filter(d => d.id !== id);
-    this.departments.next(updatedDepartments);
-  }
-}
+    this.departments.next(updatedDepartments);    
+  }}
+ 
+
+
+
+
+
+  
