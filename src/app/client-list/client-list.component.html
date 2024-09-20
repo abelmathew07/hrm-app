@@ -1,13 +1,106 @@
 <div class="container card-title mt-3">
-    <div class="row">
-      <h2 class="fs-3 text-center text-lg-start text-md-start">Clients</h2>
-      <div class="col-12 col-md-6 col-lg-4 mb-3" *ngFor="let client of clients">
-        <app-client-detail
-          [clientName]="client.clientName"
-          [email]="client.email"
-          [img]="client.img">
-        </app-client-detail>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="fs-3">Clients</h2>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="openAddClientModal()"
+    >
+      Add Client
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 mb-3" *ngFor="let client of clients">
+      <app-client-detail
+        [clientName]="client.clientName"
+        [email]="client.email"
+        [img]="client.img"
+      >
+      </app-client-detail>
+    </div>
+  </div>
+
+  <div
+    class="modal"
+    tabindex="-1"
+    role="dialog"
+    id="addClientModal"
+    [ngClass]="{ show: isAddClientModalOpen }"
+    style="display: block"
+    *ngIf="isAddClientModalOpen"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Client</h5>
+          <button
+            type="button"
+            class="btn-close"
+            (click)="closeAddClientModal()"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="addClient()">
+            <div class="mb-3">
+              <label for="clientName" class="form-label">Client Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="clientName"
+                [(ngModel)]="newClient.clientName"
+                name="clientName"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                [(ngModel)]="newClient.email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="projectName" class="form-label">Project Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="projectName"
+                [(ngModel)]="newClient.projectName"
+                name="projectName"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                [(ngModel)]="newClient.phone"
+                name="phone"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="img" class="form-label">Select Image</label>
+              <input
+                type="file"
+                class="form-control"
+                id="img"
+                (change)="onFileSelected($event)"
+                accept="image/*"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-success">Add Client</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-  
+</div>
