@@ -26,3 +26,13 @@
 .card-text{
     color:rgb(153, 7, 7);
 }
+/* payment.component.css */
+.custom-width-md {
+    width: 50px;
+  }
+  
+  @media (max-width: 767.98px) {
+    .custom-width-md {
+      width: 100%; /* Full width on small screens */
+    }
+}
