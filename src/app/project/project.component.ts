@@ -1,45 +1,86 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { projectdata, clientdata } from '../dashboard/dummydata'; // Adjust the path as necessary
+import { FormsModule } from '@angular/forms';
+
+interface Project {
+  id: number;
+  name: string;
+  status: string;
+  deadline: string;
+  clientName: string;
+}
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [NgIf, NgFor],
+  imports: [NgIf, NgFor,FormsModule,NgClass],
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent {
-  // Combine projectdata and clientdata
-  projects = projectdata.map(project => {
-    // Find the client associated with this project by matching projectName
+  projects: Project[] = projectdata.map((project, index) => {
     const client = clientdata.find(client => client.projectName === project.projectName);
     
     return {
+      id: index + 1, // Assign a unique ID
       name: project.projectName,
       status: project.status,
-      deadline: project.deadline, // Use deadline from projectdata
-      clientName: client ? client.clientName : 'Unknown Client', // Get client name from clientdata
+      deadline: project.deadline,
+      clientName: client ? client.clientName : 'Unknown Client',
     };
   });
 
-  // To handle filtering
   filteredProjects = [...this.projects];
+  selectedProject: Project | null = null;
 
-  selectedProject: any = null;
+  isAddProjectModalOpen = false;
 
-  // Method to toggle project details display
-  showProjectDetails(project: any) {
+  newProject: Project = {
+    id: 0, // Placeholder value
+    name: '',
+    status: 'Active',
+    deadline: '',
+    clientName: ''
+  };
+
+  showProjectDetails(project: Project) {
     this.selectedProject = this.selectedProject === project ? null : project;
   }
 
-  // Filtering Method
   filterByStatus(status: string) {
     this.filteredProjects = this.projects.filter(project => project.status === status);
   }
 
-  // Clear Filters
   clearFilters() {
     this.filteredProjects = [...this.projects];
+  }
+
+  openAddProjectModal() {
+    this.isAddProjectModalOpen = true;
+  }
+
+  closeAddProjectModal() {
+    this.isAddProjectModalOpen = false;
+    this.resetNewProject();
+  }
+
+  addProject() {
+    if (this.newProject.name && this.newProject.clientName) {
+      const newId = this.projects.length + 1; // Generate a new ID
+      this.projects.push({ ...this.newProject, id: newId });
+      this.filteredProjects = [...this.projects];
+      this.closeAddProjectModal();
+    }
+  }
+
+  resetNewProject() {
+    this.newProject = {
+      id: 0,
+      name: '',
+      status: 'Active',
+      deadline: '',
+      clientName: ''
+    };
   }
 }
