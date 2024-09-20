@@ -1,163 +1,10 @@
-<div class="container-fluid mt-3">
-  <div class="d-flex justify-content-between align-items-center mb-2">
-    <h3 class="fs-3 title">Employee List</h3>
-    <div class="d-flex align-items-center">
-      <button class="btn btn-primary me-2" (click)="openModal()">
-        Add Employee
-      </button>
-      <div class="w-50">
-        <select
-          id="filterDepartment"
-          [(ngModel)]="filterDepartment"
-          class="form-select"
-        >
-          <option value="">All Departments</option>
-          <option value="Software Engineer">Software Engineer</option>
-          <option value="Project Manager">Project Manager</option>
-          <option value="HR Manager">HR Manager</option>
-          <option value="UI/UX Designer">UI/UX Designer</option>
-          <option value="DevOps Engineer">DevOps Engineer</option>
-          <option value="QA Engineer">QA Engineer</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div
-    class="modal fade"
-    id="addEmployeeModal"
-    tabindex="-1"
-    aria-labelledby="addEmployeeModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addEmployeeModalLabel">
-            New Employee Details
-          </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <form (ngSubmit)="addEmployee()" enctype="multipart/form-data">
-            <div class="form-group mb-3">
-              <label for="photoUpload">Upload Photo</label>
-              <input
-                type="file"
-                id="photoUpload"
-                (change)="onPhotoSelected($event)"
-                class="form-control"
-                accept="image/*"
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label for="fullName">Full Name</label>
-              <input
-                id="fullName"
-                [(ngModel)]="newEmployee.fullName"
-                class="form-control"
-                name="fullName"
-                required
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label for="position">Position</label>
-              <input
-                id="position"
-                [(ngModel)]="newEmployee.position"
-                class="form-control"
-                name="position"
-                required
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label for="qualification">Qualification</label>
-              <input
-                id="qualification"
-                [(ngModel)]="newEmployee.qualification"
-                class="form-control"
-                name="qualification"
-                required
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label for="place">Place</label>
-              <input
-                id="place"
-                [(ngModel)]="newEmployee.place"
-                class="form-control"
-                name="place"
-                required
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                [(ngModel)]="newEmployee.email"
-                class="form-control"
-                name="email"
-                type="email"
-                required
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label for="phone">Phone</label>
-              <input
-                id="phone"
-                [(ngModel)]="newEmployee.phone"
-                class="form-control"
-                name="phone"
-                type="tel"
-                required
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label for="joiningDate">Joining Date</label>
-              <input
-                id="joiningDate"
-                [(ngModel)]="newEmployee.joiningDate"
-                class="form-control"
-                name="joiningDate"
-                type="date"
-                required
-              />
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button type="button" class="btn btn-success" (click)="addEmployee()">
-            Save Employee
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6 col-md-12 mb-4 table-container">
-      <table class="table table-hover" style="--bs-table-hover-bg: #b6d8fcd3">
-        <thead
-          class="thead-dark"
-          style="
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 10;
-            padding-top: 10px;
-          "
-        >
+<div class="container mt-4">
+  <!-- Flex container -->
+  <div class="d-flex flex-row">
+    <!-- Employee List Table -->
+    <div class="table-container">
+      <table class="table table-hover table-striped">
+        <thead class="thead-dark">
           <tr>
             <th>Sl. No</th>
             <th>Employee Name</th>
@@ -165,15 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            *ngFor="let employee of filteredEmployees; let i = index"
-            (mouseenter)="hoverEmployee(employee)"
-            (mouseleave)="clearHover()"
-            (click)="selectEmployee(employee)"
-            [class.table-active]="selectedEmployee === employee"
-            style="cursor: pointer"
-          >
-            <td>{{ i + 1 }}</td>
+          <tr *ngFor="let employee of employees" (click)="selectEmployee(employee)" style="cursor: pointer;">
             <td>{{ employee.fullName }}</td>
             <td>{{ employee.position }}</td>
           </tr>
@@ -181,58 +20,30 @@
       </table>
     </div>
 
-    <div class="col-lg-6 col-md-12 employee-details">
-      <div
-        class="card shadow rounded pos"
-        *ngIf="hoveredEmployee || selectedEmployee"
-      >
-        <div
-          class="card-header d-flex justify-content-between align-items-center bg-primary text-white"
-        >
+    <!-- Employee Details Section -->
+    <div class="employee-details" *ngIf="selectedEmployee">
+      <div class="card shadow rounded">
+        <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
           <span>Employee Details</span>
         </div>
+        
         <div class="card-body">
-          <div class="text-center mb-3">
-            <img
-              [src]="(hoveredEmployee || selectedEmployee)?.photoUrl"
-              alt="{{ (hoveredEmployee || selectedEmployee)?.fullName }}"
-              class="img-fluid rounded-circle"
-              style="max-width: 150px"
-            />
-          </div>
-          <h5 class="card-title">
-            {{ (hoveredEmployee || selectedEmployee)?.fullName }}
-          </h5>
-          <hr />
-          <p>
-            <strong>ID:</strong> {{ (hoveredEmployee || selectedEmployee)?.id }}
-          </p>
-          <p>
-            <strong>Position:</strong>
-            {{ (hoveredEmployee || selectedEmployee)?.position }}
-          </p>
-          <p>
-            <strong>Qualification:</strong>
-            {{ (hoveredEmployee || selectedEmployee)?.qualification }}
-          </p>
-          <p>
-            <strong>Place:</strong>
-            {{ (hoveredEmployee || selectedEmployee)?.place }}
-          </p>
-          <p>
-            <strong>Email:</strong>
-            {{ (hoveredEmployee || selectedEmployee)?.email }}
-          </p>
-          <p>
-            <strong>Phone:</strong>
-            {{ (hoveredEmployee || selectedEmployee)?.phone }}
-          </p>
-          <p>
-            <strong>Joining Date:</strong>
-            {{ (hoveredEmployee || selectedEmployee)?.joiningDate }}
-          </p>
+          <h5 class="card-title">{{ selectedEmployee.fullName }}</h5>
+          <hr>
+          <p><strong>ID:</strong> {{ selectedEmployee.id }}</p>
+          <p><strong>Position:</strong> {{ selectedEmployee.position }}</p>
+          <p><strong>Qualification:</strong> {{ selectedEmployee.qualification }}</p>
+          <p><strong>Place:</strong> {{ selectedEmployee.place }}</p>
+          <p><strong>Email:</strong> {{ selectedEmployee.email }}</p>
+          <p><strong>Phone:</strong> {{ selectedEmployee.phone }}</p>
+          <p><strong>Joining Date:</strong> {{ selectedEmployee.joiningDate }}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+ 
+
+
+  

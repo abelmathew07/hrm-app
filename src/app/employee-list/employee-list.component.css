@@ -5,18 +5,14 @@ th, td {
 th{
   color: white;
 }
-.family{
-  font-weight: bold;
-  color: #050c70;
-  
-}
+
 table{
     border: 1px solid rgba(0, 0, 65, 0.737);
 }
 
 /* Hover Effect for Table Rows */
 .table-hover tbody tr:hover {
-  background-color: #3dc88e !important ;
+  background-color: #f1f1f1; /* Light gray on hover */
 }
 
 /* Remove default borders for cards */
@@ -122,46 +118,4 @@ p {
     flex: 0 0 100%; /* Both sections take full width on small screens */
     max-width: 100%;
   }
-}
- .card-header{
-  background-color:#144ea3 !important;
- }
- th{
-  background-color:#144ea3;
- }
-
- .table-container {
-  max-height: 500px; /* Adjust height as needed */
-  overflow-y: auto;
-}
-
-.table-scroll {
-  overflow-x: auto;
-}
-
-/* Container for the table with custom scrollbar */
-.table-container {
-  max-height: 550px; /* Adjust height as needed */
-  overflow-y: auto;
-}
-
-/* Custom scrollbar styling for WebKit browsers */
-.table-container::-webkit-scrollbar {
-  width: 8px; /* Reduced width of the scrollbar */
-}
-
-.table-container::-webkit-scrollbar-track {
-  background: #ffffff; /* Light background for the track */
-}
-
-.table-container::-webkit-scrollbar-thumb {
-  background: #f0eeeebe; /* White color for the thumb */
-  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
-}
-.table-active {
-  --bs-table-active-bg: #b6d8fcd3;
-}
-
-.title{
-  color: #00246b;
 }
