@@ -8,10 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost/HRM", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect("mongodb://localhost/HRM");
 
 app.post("/clients", async (req, res) => {
   try {
