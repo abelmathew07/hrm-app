@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser"); // To parse the request body
+const bodyParser = require("body-parser"); 
 const Clients = require("./clients");
 
 const app = express();
