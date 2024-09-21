@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser"); 
+const bodyParser = require("body-parser");
 const Clients = require("./clients");
 
 const app = express();
-const port = 3000;
+
 
 app.use(bodyParser.json());
 
@@ -26,6 +26,16 @@ app.post("/clients", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.get("/clients", async (req, res) => {
+  try {
+    const clients = await Clients.find({});
+
+    res.status(200).json(clients);
+  } catch (e) {
+    res.status(500).json({ message: e.message });
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
 });
