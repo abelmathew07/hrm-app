@@ -1,31 +1,31 @@
-const express = require('express')
+const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser"); // To parse the request body
 const Clients = require("./clients");
 
+const app = express();
+const port = 3000;
 
-mongoose.connect("mongodb://localhost/HRM");
+app.use(bodyParser.json());
 
+mongoose.connect("mongodb://localhost/HRM", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-run();
-async function run() {
+app.post("/clients", async (req, res) => {
   try {
-    const clients = await Clients.create({
-      clientName:"test",
-      email:"test@test.com",
-      project:{
-        projectName:"test project",
-        status:"On going",
-        deadline:"2024-09-09"
-      },
-      payment:{
-        invoiceId:"testinvoice1",
-        paymentDate:"2024-09-09",
-        paidAmount:2000
-      }
-    });
+    const clientData = req.body;
+
+    const clients = await Clients.create(clientData);
     await clients.save();
-    console.log(clients);
+
+    res.status(201).json(clients);
   } catch (e) {
-    console.log(e.message);
+    res.status(500).json({ message: e.message });
   }
-}
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
